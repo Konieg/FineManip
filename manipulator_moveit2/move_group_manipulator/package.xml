@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>move_group_manipulator</name>
+  <version>0.1.0</version>
+  <description>The move_group_interface package of fines mobile move_group_manipulator</description>
+  <maintainer email="cunyang0925@gmail.com">Your Name</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>graph_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>tf2_ros</depend>
+  <depend>geometry_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

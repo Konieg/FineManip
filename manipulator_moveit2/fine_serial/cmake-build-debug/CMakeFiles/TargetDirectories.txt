@@ -1,0 +1,11 @@
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/uninstall.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/fines_serial_uninstall.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/fines_serial_LIB.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/fines_serial.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/test.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/install.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/install/local.dir
+/home/fins/Fines_Node/Fines_Serial/cmake-build-debug/CMakeFiles/install/strip.dir

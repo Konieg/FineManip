@@ -1,0 +1,4 @@
+source;share/fines_serial/local_setup.bash
+source;share/fines_serial/local_setup.dsv
+source;share/fines_serial/local_setup.sh
+source;share/fines_serial/local_setup.zsh

@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-448e6154f500bbdfa069.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "fines_serial",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "fines_serial::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fines_serial-Debug-86b57f59f4477606046c.json",
+					"name" : "fines_serial",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fines_serial_LIB::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fines_serial_LIB-Debug-3f1d6740ece7fda9e0b5.json",
+					"name" : "fines_serial_LIB",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fines_serial_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fines_serial_uninstall-Debug-a98d0a357d422fd7e878.json",
+					"name" : "fines_serial_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-970b7fe2e788f9c516f5.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/fins/Fines_Node/Fines_Serial/cmake-build-debug",
+		"source" : "/home/fins/Fines_Node/Fines_Serial"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

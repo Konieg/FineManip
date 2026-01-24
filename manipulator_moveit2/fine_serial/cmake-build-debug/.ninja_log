@@ -1,0 +1,15 @@
+# ninja log v6
+7	415	1739170826482210359	CMakeFiles/fines_serial_LIB.dir/src/serial/impl/unix.cc.o	861aa24597d8cc91
+8	415	1739170826482210359	CMakeFiles/fines_serial_LIB.dir/src/serial/impl/list_ports/list_ports_linux.cc.o	970c0adad868ad25
+11681	12235	1739176218261647605	fines_serial	a92ff6a151a5a0d3
+7	438	1739170826481210359	CMakeFiles/fines_serial_LIB.dir/src/serial/serial.cc.o	4461acaf9863e458
+438	471	1739170826912210385	libfines_serial_LIB.a	28a03c86ffbae39d
+4	2800	1739175691512682141	CMakeFiles/fines_serial.dir/src/serial_station.cpp.o	6dc1ce5a3293cf2f
+7	11681	1739176206588418053	CMakeFiles/fines_serial.dir/src/interface.cpp.o	6aad8794ab0a159c
+33	2063	1747211897648543870	CMakeFiles/fines_serial_LIB.dir/src/serial/impl/unix.cc.o	4a43095dd6eb5f7f
+34	2211	1747211897649544866	CMakeFiles/fines_serial_LIB.dir/src/serial/impl/list_ports/list_ports_linux.cc.o	51a23499687e542d
+32	2543	1747211897647542874	CMakeFiles/fines_serial_LIB.dir/src/serial/serial.cc.o	8d91521faf14612a
+2543	2607	1747211900158999037	libfines_serial_LIB.a	28a03c86ffbae39d
+36	11314	1747211897652547852	CMakeFiles/fines_serial.dir/src/serial_station.cpp.o	1e47708624b4b41e
+35	22756	1747211897650545861	CMakeFiles/fines_serial.dir/src/interface.cpp.o	7a6087b92b9c9767
+22757	23484	1747211920372310774	fines_serial	a92ff6a151a5a0d3
