@@ -1,0 +1,204 @@
+<mujoco>
+    <compiler autolimits="true" coordinate="local" angle="radian" meshdir="assets" />
+
+    <option timestep="0.002" gravity="0 0 -9.81" integrator="Euler"
+            density="1.225" viscosity="1.8e-5"/>
+
+    <asset>
+        <material name="grid" texrepeat="1 1" texuniform="true" rgba=".4 .4 .4 1" reflectance=".1"/>
+    </asset>
+
+    <default>
+        <default class="base_link_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="left_back_drive_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="left_back_steer_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="left_front_drive_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="left_front_steer_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="right_back_drive_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="right_back_steer_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="right_front_drive_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+        <default class="right_front_steer_default">
+            <geom contype="1" conaffinity="1" condim="3" friction="0.8 0.5 0.5"/>
+        </default>
+    </default>
+
+    <worldbody>
+        <light directional="true" ambient=".2 .2 .2" dir="-0.5 0 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0 -0.5 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0 0.5 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0.5 0 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <geom type="plane" size="0 0 0.01" material="grid" />
+
+        <!-- base_link -->
+        <body name="base" pos="0 0 1">
+            <joint name="base_link_joint" type="free" damping="0.1" />
+
+            <body name="base_link" pos="0 0 0">
+                <inertial pos="-0.115726 0.000987 0.082924"
+                          mass="7.918275"
+                          diaginertia="0.188569 0.187639 0.110565"/>
+                <geom type="box" name="base_link" size="0.1484 0.149 0.002" pos="-0.097 0 0.002" class="base_link_default"/>
+                <body name="chassis" pos="-0.1569 0 0.1575">
+                    <geom type="box" name="chassis" size="0.0905 0.149 0.1535" pos="0 0 0" class="base_link_default"/>
+                </body>
+            </body>
+
+            <body name="camera_turret" pos="-0.04603 0.0 0.5">
+                <inertial pos="0 0 0" mass="0.2" diaginertia="0.0002 0.0002 0.0002"/>
+                <joint name="cam_yaw" axis="0 0 1" />
+            </body>
+
+            <!-- link1 -->
+            <body name="link1" pos="0 0 0">
+                <joint name="joint1" type="hinge" axis="0 0 -1" range="-3.14 3.14"/>
+                <inertial pos="0.046035 0.000664 0.066104"
+                          mass="0.254561"
+                          diaginertia="0.000147 0.000290 0.000214"/>
+                <geom type="box" name="link1" size="0.03 0.027 0.01125" pos="0.03 0 0.03925" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+                <!-- link2 -->
+                <body name="link2" pos="0.06 0 0.078" euler="1.5708 0 0">
+                    <joint name="joint2" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                    <inertial pos="0.000018 0.089981 -0.012953"
+                              mass="1.044007"
+                              diaginertia="0.005140 0.001031 0.004603"/>
+                    <geom name="link2" type="cylinder" size="0.036 0.09" pos="0 0.09 0" euler="1.5708 0 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                    <!-- link3 -->
+                    <body name="link3" pos="0 0.18 0" euler="0 0 1.5708">
+                        <joint name="joint3" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                        <inertial pos="0.030122 0.000884 -0.000517"
+                                  mass="0.360137"
+                                  diaginertia="0.000185 0.000453 0.000510"/>
+                        <geom name="link3" type="cylinder" size="0.03 0.03" pos="0.03 0 0" euler="0 1.5708 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+                        <!-- link4 -->
+                        <body name="link4" pos="0.06 0 0" euler="1.5708 0 0">
+                            <joint name="joint4" type="hinge" axis="0 0 -1" range="-3.14 3.14"/>
+                            <inertial pos="0.002071 -0.008724 0.094513"
+                                      mass="0.455065"
+                                      diaginertia="0.000849 0.000692 0.000351"/>
+                            <geom name="link4" type="cylinder" size="0.036 0.0755" pos="0 0 0.0755" euler="0 0 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                            <!-- link5 -->
+                            <body name="link5" pos="0 0 0.151" euler="-1.5708 0 -3.1416">
+                                <joint name="joint5" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                                <inertial pos="0 0.012084 0.001762"
+                                          mass="0.191964"
+                                          diaginertia="0.000119 0.000099 0.000113"/>
+                                <geom name="link5" type="cylinder" size="0.036 0.0175" pos="0 0.0175 0" euler="1.5708 0 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                                <!-- link6 -->
+                                <body name="link6" pos="0 0 0" euler="-1.5708 0 3.1416">
+                                    <joint name="joint6" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                                    <inertial pos="0.000162 -0.000111 0.047924"
+                                              mass="0.00926"
+                                              diaginertia="0.000002 0.000002 0.000003"/>
+                                    <geom type="cylinder" name="link6" size="0.0198 0.0135" pos="0 0 0.0485" euler="0 0 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                                    <!-- hand -->
+                                    <body name="link_hand" pos="0 0 0.11564" euler="1.5708 1.5708 0">
+                                        <inertial pos="-0.000035 -0.004805 -0.010369"
+                                                  mass="0.172561"
+                                                  diaginertia="0.000171 0.000105 0.000224"/>
+                                        <geom type="box" name="link_hand" size="0.06 0.0513 0.008" pos="0 0 -0.008" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+                                    </body>
+
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="left_back_steer" pos="-0.21730 0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="left_back_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="0.006030 -0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="cylinder" name="left_back_steer" size="0.0255 0.01740" pos="0 0 -0.01740" class="left_back_steer_default"/>
+                <body name="left_back_drive" pos="-0.02500 0 -0.06080">
+                    <joint name="left_back_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="cylinder" name="left_back_drive" size="0.026 0.01" pos="0.025 0 0" euler="0 1.5708 0" class="left_back_drive_default"/>
+                </body>
+            </body>
+            <body name="left_front_steer" pos="0.02330 0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="left_front_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="0.006030 -0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="cylinder" name="left_front_steer" size="0.0255 0.01740" pos="0 0 -0.01740" class="left_front_steer_default"/>
+                <body name="left_front_drive" pos="-0.02500 0 -0.06080">
+                    <joint name="left_front_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="cylinder" name="left_front_drive" size="0.026 0.01" pos="0.025 0 0" euler="0 1.5708 0" class="left_front_drive_default"/>
+                </body>
+            </body>
+            <body name="right_back_steer" pos="-0.21730 -0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="right_back_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="-0.006030 0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="cylinder" name="right_back_steer" size="0.0255 0.01740" pos="0 0 -0.01740" class="right_back_steer_default"/>
+                <body name="right_back_drive" pos="0.02500 0 -0.06080">
+                    <joint name="right_back_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="-0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="cylinder" name="right_back_drive" size="0.026 0.01" pos="-0.025 0 0" euler="0 1.5708 0" class="right_back_drive_default"/>
+                </body>
+            </body>
+            <body name="right_front_steer" pos="0.02330 -0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="right_front_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="-0.006030 0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="cylinder" name="right_front_steer" size="0.0255 0.01740" pos="0 0 -0.01740" class="right_front_steer_default"/>
+                <body name="right_front_drive" pos="0.02500 0 -0.06080">
+                    <joint name="right_front_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="-0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="cylinder" name="right_front_drive" size="0.026 0.01" pos="-0.025 0 0" euler="0 1.5708 0" class="right_front_drive_default"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <position joint="cam_yaw" kp="1" kv="0.1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+
+        <position joint="joint1" kp="1" kv="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+        <position joint="joint2" kp="15" kv="0.05" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+        <position joint="joint3" kp="10" kv="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+        <position joint="joint4" kp="2" kv="0.1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+        <position joint="joint5" kp="1" kv="0.1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+        <position joint="joint6" kp="1" kv="0.01"  ctrlrange="-3.14 3.14" ctrllimited="true"/>
+
+        <position joint="left_back_steer_joint" kp="1" kv="0.05" ctrlrange="-10 10" ctrllimited="true"/>
+        <velocity joint="left_back_drive_joint" kv="0.005" ctrlrange="-10 10" ctrllimited="true"/>
+        <position joint="left_front_steer_joint" kp="1" kv="0.05" ctrlrange="-10 10" ctrllimited="true"/>
+        <velocity joint="left_front_drive_joint" kv="0.005" ctrlrange="-10 10" ctrllimited="true"/>
+        <position joint="right_back_steer_joint" kp="1" kv="0.05" ctrlrange="-10 10" ctrllimited="true"/>
+        <velocity joint="right_back_drive_joint" kv="0.005" ctrlrange="-10 10" ctrllimited="true"/>
+        <position joint="right_front_steer_joint" kp="1" kv="0.05" ctrlrange="-10 10" ctrllimited="true"/>
+        <velocity joint="right_front_drive_joint" kv="0.005" ctrlrange="-10 10" ctrllimited="true"/>
+    </actuator>
+</mujoco>

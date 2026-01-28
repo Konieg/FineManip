@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco>
+<compiler meshdir="assets"/>
+  <asset>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_l2_05_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m2x40_mu_mu__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m2x40_mu_mu__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__4.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_4.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__4.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1__deng_ge_odrive_1__deng_ge_odrive_dan_lu__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_10_1__deng_ge_odrive_1__deng_ge_odrive_dan_lu__shell_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_7_1_dcy_42_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_7_1_l1_02_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_c4250__shuang_chu_zhou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_l1_01_1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__3.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__4.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__5.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__6.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__7.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__8.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__1.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__2.stl"/>
+    <mesh file="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__3.stl"/>
+    <mesh file="wangs___base_link_1__zhong_kong_xuan_zhuan_ping_tai__1_mk60z_25_a_1.stl"/>
+    <mesh file="wangs___base_link_1__zhong_kong_xuan_zhuan_ping_tai__1_mk60z_25_b_1.stl"/>
+  </asset>
+
+  <default>
+  <default class="base_link_default">
+  <geom contype="0" conaffinity="0"/>
+  </default>
+  </default>
+
+  <worldbody>
+  <body name="base_link_body" pos="0 0 0">
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_l2_05_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m2x40_mu_mu__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m2x40_mu_mu__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m2x6_chen_tou__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_1_1_m4x16_bei_tou__4" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_2x3x4_4" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1_m2x12_bei_tou__4" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1__deng_ge_odrive_1__deng_ge_odrive_dan_lu__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_10_1__deng_ge_odrive_1__deng_ge_odrive_dan_lu__shell_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_11_1_m3x10_chen_tou__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_7_1_dcy_42_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_7_1_l1_02_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_c4250__shuang_chu_zhou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_l1_01_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m3x8_chen_tou__4" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__5" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__6" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__7" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_8_1_m4x10_bei_tou__8" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__2" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1_j1__bu_zhou_9_1_m3x68_gong_mu__3" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1__zhong_kong_xuan_zhuan_ping_tai__1_mk60z_25_a_1" class="base_link_default"/>
+    <geom type="mesh" mesh="wangs___base_link_1__zhong_kong_xuan_zhuan_ping_tai__1_mk60z_25_b_1" class="base_link_default"/>
+  </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco>
+<compiler meshdir="assets"/>
+  <asset>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__lun_gua_jia__1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__lun_zu_fen_dian_xia_ban__1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_tong_bu_lun__2.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__tao_guan__1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou__1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1.stl"/>
+    <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1.stl"/>
+  </asset>
+
+  <default>
+  <default class="left_front_steer_default">
+  <geom contype="0" conaffinity="0"/>
+  </default>
+  </default>
+
+  <worldbody>
+  <body name="left_front_steer_body" pos="0 0 0">
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__lun_gua_jia__1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__lun_zu_fen_dian_xia_ban__1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_tong_bu_lun__2" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__tao_guan__1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou__1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1" class="left_front_steer_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1" class="left_front_steer_default"/>
+  </body>
+  </worldbody>
+</mujoco>

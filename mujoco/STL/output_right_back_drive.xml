@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco>
+<compiler meshdir="assets"/>
+  <asset>
+    <mesh file="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_pi__1.stl"/>
+    <mesh file="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_xin__1.stl"/>
+    <mesh file="di_pan_xiao_che____right_back_drive_3__dian_ji__1.stl"/>
+  </asset>
+
+  <default>
+  <default class="right_back_drive_default">
+  <geom contype="0" conaffinity="0"/>
+  </default>
+  </default>
+
+  <worldbody>
+  <body name="right_back_drive_body" pos="0 0 0">
+    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_pi__1" class="right_back_drive_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_xin__1" class="right_back_drive_default"/>
+    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__dian_ji__1" class="right_back_drive_default"/>
+  </body>
+  </worldbody>
+</mujoco>

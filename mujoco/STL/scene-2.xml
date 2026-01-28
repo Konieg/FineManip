@@ -1,0 +1,263 @@
+<mujoco>
+    <compiler autolimits="true" coordinate="local" angle="radian" meshdir="assets" />
+    <asset>
+    <material name="grid" texrepeat="1 1" texuniform="true" rgba=".4 .4 .4 1" reflectance=".1"/>
+        <mesh file="base.stl" name="base_link"/>
+        <mesh file="link1.stl" name="link1"/>
+        <mesh file="link2_new.stl" name="link2"/>
+        <mesh file="link3_new.stl" name="link3"/>
+        <mesh file="link4_new.stl" name="link4"/>
+        <mesh file="link5.stl" name="link5"/>
+        <mesh file="link6.stl" name="link6"/>
+        <mesh file="link_hand.stl" name="link_hand"/>
+<!--    left_back_drive-->
+        <mesh file="di_pan_xiao_che____left_back_drive_2__bao_jiao_lun__1__bao_jiao_lun_pi__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_drive_2__bao_jiao_lun__1__bao_jiao_lun_xin__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_drive_2__dian_ji__1.stl"/>
+<!--    left_back_steer-->
+        <mesh file="di_pan_xiao_che____left_back_steer_2__lun_gua_jia__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__lun_zu_fen_dian_xia_ban__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_tong_bu_lun__2.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__tao_guan__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1.stl"/>
+        <mesh file="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1.stl"/>
+<!--    left_front_drive-->
+        <mesh file="di_pan_xiao_che____left_front_drive_1__bao_jiao_lun__1__bao_jiao_lun_pi__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_drive_1__bao_jiao_lun__1__bao_jiao_lun_xin__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_drive_1__dian_ji__1.stl"/>
+<!--    left_front_steer-->
+        <mesh file="di_pan_xiao_che____left_front_steer_1__lun_gua_jia__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__lun_zu_fen_dian_xia_ban__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_tong_bu_lun__2.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__tao_guan__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou__1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1.stl"/>
+        <mesh file="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1.stl"/>
+<!--    right_back_drive-->
+        <mesh file="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_pi__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_xin__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_drive_3__dian_ji__1.stl"/>
+<!--    right_back_steer-->
+        <mesh file="di_pan_xiao_che____right_back_steer_3__lun_gua_jia__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__lun_zu_fen_dian_xia_ban__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_tong_bu_lun__2.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__tao_guan__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1.stl"/>
+        <mesh file="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1.stl"/>
+<!--    right_front_drive-->
+        <mesh file="di_pan_xiao_che____right_front_drive_4__bao_jiao_lun__1__bao_jiao_lun_pi__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_drive_4__bao_jiao_lun__1__bao_jiao_lun_xin__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_drive_4__dian_ji__1.stl"/>
+<!--    right_front_steer-->
+        <mesh file="di_pan_xiao_che____right_front_steer_4__lun_gua_jia__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__lun_zu_fen_dian_xia_ban__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_tong_bu_lun__2.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__tao_guan__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou__1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1.stl"/>
+        <mesh file="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1.stl"/>
+    </asset>
+    <default>
+        <default class="left_back_drive_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="left_back_steer_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="left_front_drive_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="left_front_steer_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="right_back_drive_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="right_back_steer_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="right_front_drive_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+        <default class="right_front_steer_default">
+            <geom contype="1" conaffinity="1"/>
+        </default>
+    </default>
+    <worldbody>
+        <light directional="true" ambient=".2 .2 .2" dir="-0.5 0 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0 -0.5 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0 0.5 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <light directional="true" ambient=".2 .2 .2" dir="0.5 0 -1" diffuse=".2 .2 .2" specular=".2 .2 .2" />
+        <geom type="plane" size="0 0 0.01" material="grid" />
+
+        <!-- base_link -->
+        <body name="base_link" pos="0 0 1">
+            <freejoint />
+            <inertial pos="-0.115726 0.000987 0.082924"
+                      mass="7.918275"
+                      diaginertia="0.188569 0.187639 0.110565"/>
+            <geom type="mesh" mesh="base_link" contype="0" conaffinity="0" condim="3" friction="0.8 0.1 0.1"/>
+
+            <!-- link1 -->
+            <body name="link1" pos="0 0 0">
+                <joint name="joint1" type="hinge" axis="0 0 -1" range="-3.14 3.14"/>
+                <inertial pos="0.046035 0.000664 0.066104"
+                          mass="0.254561"
+                          diaginertia="0.000147 0.000290 0.000214"/>
+                <geom type="mesh" mesh="link1" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                <!-- link2 -->
+                <body name="link2" pos="0.06 0 0.078" euler="1.5708 0 0">
+                    <joint name="joint2" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                    <inertial pos="0.000018 0.089981 -0.012953"
+                              mass="1.044007"
+                              diaginertia="0.005140 0.001031 0.004603"/>
+                    <geom type="mesh" mesh="link2" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                    <!-- link3 -->
+                    <body name="link3" pos="0 0.18 0" euler="0 0 1.5708">
+                        <joint name="joint3" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                        <inertial pos="0.030122 0.000884 -0.000517"
+                                  mass="0.360137"
+                                  diaginertia="0.000185 0.000453 0.000510"/>
+                        <geom type="mesh" mesh="link3" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                        <!-- link4 -->
+                        <body name="link4" pos="0.06 0 0" euler="1.5708 0 0">
+                            <joint name="joint4" type="hinge" axis="0 0 -1" range="-3.14 3.14"/>
+                            <inertial pos="0.002071 -0.008724 0.094513"
+                                      mass="0.455065"
+                                      diaginertia="0.000849 0.000692 0.000351"/>
+                            <geom type="mesh" mesh="link4" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                            <!-- link5 -->
+                            <body name="link5" pos="0 0 0.151" euler="-1.5708 0 -3.1416">
+                                <joint name="joint5" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                                <inertial pos="0 0.012084 0.001762"
+                                          mass="0.191964"
+                                          diaginertia="0.000119 0.000099 0.000113"/>
+                                <geom type="mesh" mesh="link5" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                                <!-- link6 -->
+                                <body name="link6" pos="0 0 0" euler="-1.5708 0 3.1416">
+                                    <joint name="joint6" type="hinge" axis="0 0 1" range="-3.14 3.14"/>
+                                    <inertial pos="0.000162 -0.000111 0.047924"
+                                              mass="0.00926"
+                                              diaginertia="0.000002 0.000002 0.000003"/>
+                                    <geom type="mesh" mesh="link6" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+
+                                    <!-- hand -->
+                                    <body name="link_hand" pos="0 0 0.11564" euler="1.5708 1.5708 0">
+                                        <inertial pos="-0.000035 -0.004805 -0.010369"
+                                                  mass="0.172561"
+                                                  diaginertia="0.000171 0.000105 0.000224"/>
+                                        <geom type="mesh" mesh="link_hand" contype="1" conaffinity="1" condim="3" friction="0.8 0.1 0.1"/>
+                                    </body>
+
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="left_back_steer" pos="-0.21730 0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="left_back_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="0.006030 -0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__lun_gua_jia__1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__lun_zu_fen_dian_xia_ban__1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_tong_bu_lun__2" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__tao_guan__1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou__1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1" class="left_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_back_steer_2__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1" class="left_back_steer_default"/>
+                <body name="left_back_drive" pos="-0.02500 0 -0.06080">
+                    <joint name="left_back_drive_joint" type="hinge" axis="-1 0 0" />
+                    <inertial pos="0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_back_drive_2__bao_jiao_lun__1__bao_jiao_lun_pi__1" class="left_back_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_back_drive_2__bao_jiao_lun__1__bao_jiao_lun_xin__1" class="left_back_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_back_drive_2__dian_ji__1" class="left_back_drive_default"/>
+                </body>
+            </body>
+            <body name="left_front_steer" pos="0.02330 0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="left_front_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="0.006030 -0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__lun_gua_jia__1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__lun_zu_fen_dian_xia_ban__1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_tong_bu_lun__2" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__tao_guan__1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou__1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1" class="left_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____left_front_steer_1__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1" class="left_front_steer_default"/>
+                <body name="left_front_drive" pos="-0.02500 0 -0.06080">
+                    <joint name="left_front_drive_joint" type="hinge" axis="-1 0 0" />
+                    <inertial pos="0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_front_drive_1__bao_jiao_lun__1__bao_jiao_lun_pi__1" class="left_front_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_front_drive_1__bao_jiao_lun__1__bao_jiao_lun_xin__1" class="left_front_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____left_front_drive_1__dian_ji__1" class="left_front_drive_default"/>
+                </body>
+            </body>
+            <body name="right_back_steer" pos="-0.21730 -0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="right_back_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="-0.006030 0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__lun_gua_jia__1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__lun_zu_fen_dian_xia_ban__1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_tong_bu_lun__2" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__tao_guan__1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou__1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1" class="right_back_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_back_steer_3__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1" class="right_back_steer_default"/>
+                <body name="right_back_drive" pos="0.02500 0 -0.06080">
+                    <joint name="right_back_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="-0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_pi__1" class="right_back_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__bao_jiao_lun__1__bao_jiao_lun_xin__1" class="right_back_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_back_drive_3__dian_ji__1" class="right_back_drive_default"/>
+                </body>
+            </body>
+            <body name="right_front_steer" pos="0.02330 -0.12000 -0.00160" euler="0 0 -1.5708">
+                <joint name="right_front_steer_joint" type="hinge" axis="0 0 1" />
+                <inertial pos="-0.006030 0.000013 -0.042243"
+                          mass="0.117107"
+                          diaginertia="0.000071 0.000098 0.000049"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__lun_gua_jia__1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__lun_zu_fen_dian_xia_ban__1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_tong_bu_lun__2" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__tao_guan__1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou__1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng__698_1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_1" class="right_front_steer_default"/>
+                <geom type="mesh" mesh="di_pan_xiao_che____right_front_steer_4__qu_dong_zhou_gu_ding_jian__1__zhou_cheng_gua_jia__cnc_ke__1" class="right_front_steer_default"/>
+                <body name="right_front_drive" pos="0.02500 0 -0.06080">
+                    <joint name="right_front_drive_joint" type="hinge" axis="1 0 0" />
+                    <inertial pos="-0.018840 0 0"
+                              mass="0.142689"
+                              diaginertia="0.000038 0.000033 0.000033"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_front_drive_4__bao_jiao_lun__1__bao_jiao_lun_pi__1" class="right_front_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_front_drive_4__bao_jiao_lun__1__bao_jiao_lun_xin__1" class="right_front_drive_default"/>
+                    <geom type="mesh" mesh="di_pan_xiao_che____right_front_drive_4__dian_ji__1" class="right_front_drive_default"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
