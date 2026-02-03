@@ -1,0 +1,195 @@
+import pinocchio as pin
+import numpy as np
+import os
+
+
+URDF_PATH = "D:/example_urdf/manipulator.urdf"  # ← 改成URDF 绝对路径
+END_EFFECTOR_FRAME = "link6"                   # ← 改成URDF 中末端连杆的 frame 名称
+
+PACKAGE_DIRS = ["D:/example_urdf"]       
+
+
+
+
+def main():
+    print("Pinocchio version:", pin.__version__)
+    
+    # --- 1. 加载自定义 URDF ---
+    if not os.path.exists(URDF_PATH):
+        raise FileNotFoundError(f"URDF file not found: {URDF_PATH}")
+    
+    try:
+        #要求 mesh 路径为相对路径）
+        model, collision_model, visual_model = pin.buildModelsFromUrdf(
+    URDF_PATH, PACKAGE_DIRS
+)
+    except Exception as e:
+        print("Failed to load URDF:", e)
+        return
+
+    print(f"Loaded model: {model.name}")
+    print(f"- nq (configuration size): {model.nq}")
+    print(f"- nv (velocity size): {model.nv}")
+
+    # --- 2. 创建数据对象 ---
+    data = model.createData()
+    visual_data = visual_model.createData()
+
+    # --- 3. 检查末端执行器 frame ---
+    if not model.existFrame(END_EFFECTOR_FRAME):
+        print("Available frames:")
+        for f in model.frames:
+            print(f"  - {f.name} (type: {f.type})")
+        raise ValueError(f"Frame '{END_EFFECTOR_FRAME}' not found!")
+
+    frame_id = model.getFrameId(END_EFFECTOR_FRAME)
+    print(f"Using end-effector frame: '{END_EFFECTOR_FRAME}' (id={frame_id})")
+
+    # --- 4. 随机配置 + 正向运动学 ---
+    pin.seed()  
+    q = pin.randomConfiguration(model)
+    print(f"Random configuration q = {q.round(3)}")
+
+    pin.forwardKinematics(model, data, q)
+    pin.computeJointJacobians(model, data, q)
+    pin.updateFramePlacement(model, data, frame_id)
+    pos = data.oMf[frame_id].translation
+    target_M = data.oMf[frame_id].copy()
+    print(f"End-effector position: [{pos[0]:.3f}, {pos[1]:.3f}, {pos[2]:.3f}]")
+
+    # --- 5. 逆动力学（重力补偿）---
+    v = np.zeros(model.nv)
+    a = np.zeros(model.nv)
+    tau = pin.rnea(model, data, q, v, a)
+    print(f"Gravity compensation torques: {tau.round(3)}")
+
+    # --- 6. inverse kinematics(IK)
+
+    print("Running Inverse Kinematics (Full Pose)...")
+    q_ik = pin.randomConfiguration(model)  # 从另一个随机点开始
+    max_iter = 500
+    dt = 0.02    # 步长
+    eps = 1e-3   # 收敛阈值（6D 误差）
+
+    damp = 1e-3
+
+
+    J_test = pin.getFrameJacobian(model, data, frame_id, pin.ReferenceFrame.LOCAL)
+    active_mask = np.any(np.abs(J_test) > 1e-6, axis=0)
+    active_joints = np.where(active_mask)[0]
+    n_active = len(active_joints)
+    print(f"Active joints: {active_joints}")
+
+
+    print("Original q (for FK):", q.round(3))
+    print("IK initial guess q_ik:", q_ik.round(3))
+    print("Are they equal?", np.allclose(q, q_ik))
+
+    for i in range(max_iter):
+    # 前向运动学 + 更新 frame 位姿
+        pin.forwardKinematics(model, data, q_ik)
+        pin.computeJointJacobians(model, data, q_ik)
+        pin.updateFramePlacement(model, data, frame_id)
+        current_M = data.oMf[frame_id]  # 当前末端位姿 (SE3)
+
+    # --- 计算 6D 位姿误差（在末端局部坐标系）---
+        iMd = current_M.actInv(target_M)     
+        err = pin.log(iMd).vector             
+        err_norm = np.linalg.norm(err)
+        
+
+        if err_norm < eps:
+            print(f" Converged at iter {i}, error = {err_norm:.6f}")
+            break
+
+    # --- 计算完整雅可比（6 x nv）---
+        J = pin.computeFrameJacobian(model, data, q_ik, frame_id)  # 默认 world frame
+
+    # --- 将雅可比转换到与误差一致的坐标系（局部 frame）---
+        J_local = pin.getFrameJacobian(model, data, frame_id, pin.ReferenceFrame.LOCAL)
+    # J_local 已经是在 frame 自身坐标系下的 6xnv 雅可比
+        
+        J_active = J_local[:, active_joints]   # shape: (6, n_active)
+
+
+        # --- 误差缩放 ---
+        err_scaled = np.copy(err)
+        err_scaled[:3] *= 1.0    
+        err_scaled[3:] *= 10.0   #
+
+        if n_active >= 6:
+        # 欠定或适定：用伪逆
+            dq_active = J_active.T @ np.linalg.solve(
+            J_active @ J_active.T + damp * np.eye(6), 
+            err_scaled
+        )
+        else:
+        # 超定（自由度 < 6）：最小二乘
+            dq_active, residuals, rank, s = np.linalg.lstsq(J_active, err_scaled, rcond=None)
+
+        dq_full = np.zeros(model.nv)
+        dq_full[active_joints] = dq_active 
+    
+        q_ik = pin.integrate(model, q_ik, dq_full * dt)
+
+        if i%100==0:
+            print(f"Iter {i}: ||err||={err_norm:.6f}, ||dq||={np.linalg.norm(dq_full):.6e}")
+            print(f"J_local non-zero? {np.any(np.abs(J_local) > 1e-6)}")
+        if i == 0:
+            print("First J_local:\n", J_local)
+
+    # （可选）限制关节范围
+    #if hasattr(model, 'lowerPositionLimit') and hasattr(model, 'upperPositionLimit'):
+     #   q_ik = np.clip(q_ik, model.lowerPositionLimit, model.upperPositionLimit)
+   
+
+    else:
+        print(f" Did not converge. Final error = {err_norm:.6f}")
+    print(q_ik.round(6))
+
+    # --- 验证原始 q 的末端位姿 ---
+    pin.forwardKinematics(model, data, q)
+    pin.updateFramePlacement(model, data, frame_id)
+    pos_original = data.oMf[frame_id].translation
+    rot_original = data.oMf[frame_id].rotation
+
+# --- 验证 IK 解 q_ik 的末端位姿 ---
+    pin.forwardKinematics(model, data, q_ik)
+    pin.updateFramePlacement(model, data, frame_id)
+    pos_ik = data.oMf[frame_id].translation
+    rot_ik = data.oMf[frame_id].rotation
+
+    R_err = rot_original.T @ rot_ik
+    rotvec_err = pin.log3(R_err)
+    rot_angle_diff = np.linalg.norm(rotvec_err)
+    print(f"Rotation difference (angle): {rot_angle_diff:.9f} rad ({np.degrees(rot_angle_diff):.6f} deg)")
+
+    print("Verification:")
+    print(f"Original position:   {pos_original}")
+    print(f"IK solution position: {pos_ik}")
+    print(f"Position difference: {np.linalg.norm(pos_original - pos_ik):.6f}")
+
+    print(f"Original rotation:\n{rot_original}")
+    print(f"IK rotation:\n{rot_ik}")
+    
+
+    # --- 7. 可视化（Meshcat）---
+    try:
+        from pinocchio.visualize import MeshcatVisualizer
+        viz = MeshcatVisualizer(model, collision_model, visual_model)
+        viz.initViewer(open=True)  # 自动打开浏览器
+        viz.loadViewerModel()
+        viz.display(q)
+        print("Visualization opened in browser (http://localhost:7000)")
+        input("Press Enter to continue...")  # 保持窗口打开
+    except ImportError:
+        print("Meshcat not installed. Skip visualization.")
+        print("Install with: pip install meshcat-python")
+    except Exception as e:
+        print(f"Visualization failed: {e}")
+
+    print("All tests completed successfully!")
+
+
+if __name__ == "__main__":
+    main()
